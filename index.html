@@ -499,12 +499,19 @@
         }
 
         .figure-row-2 {
-            display: flex;
-            flex-direction: row;
+            display: flex !important;
+            flex-direction: row !important;
             gap: 1.5rem;
             justify-content: center;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;  /* Changed from wrap to nowrap */
             margin-bottom: 1rem;
+            align-items: flex-start;
+        }
+        
+        .figure-item {
+            text-align: center;
+            flex: 0 1 auto;  /* Add this to prevent flex items from growing */
+            max-width: 45%;  /* Limit width to ensure two items fit side-by-side */
         }
 
         .figure-grid-2x2 {
@@ -513,10 +520,6 @@
             gap: 1.5rem;
             max-width: 400px;
             margin: 0 auto 1rem auto;
-        }
-
-        .figure-item {
-            text-align: center;
         }
 
         .figure-item img {
