@@ -503,6 +503,7 @@
             gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
+            max-width: 300px;
             margin-bottom: 1rem;
         }
 
@@ -510,7 +511,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
-            max-width: 800px;
+            max-width: 400px;
             margin: 0 auto 1rem auto;
         }
 
@@ -790,9 +791,19 @@
             </ul>
 
             <div class="figure-container">
-                <img src="images/paper2_Pressure_scrc_setup_block_diagram.png" alt="Deployment setup" class="figure-single">
-                <p class="figure-caption"><strong>Figure 1:</strong> Deployment setup</p>
+                <div class="figure-row-2">
+                    <div class="figure-item">
+                        <img src="images/paper2_Pressure_scrc_setup_block_diagram.png" alt="Deployment setup">
+                        <p class="subfigure-label">(a) Deployment setup</p>
+                    </div>
+                    <div class="figure-item">
+                        <img src="images/paper2_Block-Diagram.png" alt="Block architecture of the node">
+                        <p class="subfigure-label">(b) Block architecture</p>
+                    </div>
+                </div>
+                <p class="figure-caption"><strong>Figure 1:</strong> (a) Deployment setup (b) Block architecture of the node</p>
             </div>
+
 
             <div class="figure-container">
                 <div class="figure-grid-2x2">
@@ -815,12 +826,6 @@
                 </div>
                 <p class="figure-caption"><strong>Figure 2:</strong> Hardware components of the experimental setup. (a) Tank, pump and valve (b) Pressure Sensors (c) Retrofitted flow meter (d) IoT node</p>
             </div>
-
-            <div class="figure-container">
-                <img src="images/paper2_Block-Diagram.png" alt="Block architecture of the node" class="figure-single">
-                <p class="figure-caption"><strong>Figure 3:</strong> Block architecture of the node</p>
-            </div>
-
 
 
             <h3 class="section-subtitle">Data Collection</h3>
@@ -986,18 +991,23 @@
                         <p class="subfigure-label">(b) 1.6 bar</p>
                     </div>
                 </div>
-                <p class="figure-caption"><strong>Figure 4:</strong> Timeseries plots of a few data segments collected for Sensor Type A at different pressure levels</p>
+                <p class="figure-caption"><strong>Figure 3:</strong> Timeseries plots of a few data segments collected for Sensor Type A at different pressure levels</p>
             </div>
 
             <div class="figure-container">
-                <img src="images/paper2_calibration_models_updated.png" alt="Calibration model fitted curves" class="figure-medium">
-                <p class="figure-caption"><strong>Figure 5:</strong> Plot showing fitted curves of calibration models trained for Unit 1 of Sensor A</p>
+                <div class="figure-row-2">
+                    <div class="figure-item">
+                        <img src="images/paper2_calibration_models_updated.png" alt="Calibration model fitted curves">
+                        <p class="subfigure-label">(a) Calibration models</p>
+                    </div>
+                    <div class="figure-item">
+                        <img src="images/paper2_Unit3_Phase1_all_models.png" alt="Flow estimation model fitted curves">
+                        <p class="subfigure-label">(b) Flow estimation models</p>
+                    </div>
+                </div>
+                <p class="figure-caption"><strong>Figure 4:</strong> Model performance visualization. (a) Plot showing fitted curves of calibration models trained for Unit 1 of Sensor A (b) Plot showing fitted curves of all flow rate estimation models trained for Unit 3 of Sensor A</p>
             </div>
 
-            <div class="figure-container">
-                <img src="images/paper2_Unit3_Phase1_all_models.png" alt="Flow estimation model fitted curves" class="figure-medium">
-                <p class="figure-caption"><strong>Figure 6:</strong> Plot showing fitted curves of all flow rate estimation models trained for Unit 3 of Sensor A</p>
-            </div>
         </section>
 
             <h3 class="section-subtitle" style="margin-top: 2.5rem;">Key Findings</h3>
