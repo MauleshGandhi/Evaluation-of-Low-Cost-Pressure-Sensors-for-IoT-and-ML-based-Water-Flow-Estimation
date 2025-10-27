@@ -69,104 +69,94 @@
             flex-wrap: wrap;
         }
 
-        .nav-links a {
+        .nav-link {
             color: var(--text-medium);
             text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
         }
 
-        .nav-links a:hover {
+        .nav-link:hover {
             color: var(--primary-color);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 0 2rem;
         }
 
         .hero {
-            background: linear-gradient(135deg, #0d9488 0%, #14b8a6 100%);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
             color: white;
-            padding: 4rem 2rem;
-            text-align: center;
+            padding: 4rem 0;
             margin-bottom: 3rem;
         }
 
-        .hero h1 {
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-title {
             font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             line-height: 1.2;
         }
 
         .hero-meta {
             display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-            align-items: center;
+            flex-direction: column;
+            gap: 0.75rem;
+            font-size: 1.1rem;
+            opacity: 0.95;
         }
 
         .hero-meta-item {
-            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
 
         .badge {
             display: inline-block;
-            padding: 0.5rem 1rem;
             background: rgba(255, 255, 255, 0.2);
-            border-radius: var(--radius-full);
-            font-weight: 600;
+            padding: 0.375rem 0.875rem;
+            border-radius: var(--radius-md);
             font-size: 0.9rem;
-            border: 2px solid rgba(255, 255, 255, 0.5);
-        }
-
-        .note {
-            margin-top: 1.5rem;
-            font-size: 0.95rem;
-            opacity: 0.9;
-            font-style: italic;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
         }
 
         .section {
             background: var(--bg-white);
             border-radius: var(--radius-lg);
-            padding: 2.5rem;
+            padding: 3rem;
             margin-bottom: 2rem;
-            box-shadow: var(--shadow-sm);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
+            box-shadow: var(--shadow-md);
         }
 
         .section-title {
             font-size: 2rem;
-            font-weight: 700;
             color: var(--primary-dark);
             margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
             border-bottom: 3px solid var(--primary-color);
-            display: inline-block;
+            padding-bottom: 0.75rem;
         }
 
         .section-subtitle {
             font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text-dark);
+            color: var(--primary-dark);
             margin-top: 2rem;
             margin-bottom: 1rem;
         }
 
-        .abstract-card {
-            background: linear-gradient(135deg, #f0fdfa 0%, #ecfdf5 100%);
+        .abstract {
+            background: linear-gradient(135deg, #f0fdfa 0%, #ccfbf1 100%);
             border-left: 4px solid var(--primary-color);
             padding: 2rem;
             border-radius: var(--radius-md);
@@ -181,181 +171,51 @@
         }
 
         .keywords {
-            margin-top: 1.5rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .keywords strong {
-            color: var(--primary-dark);
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: var(--text-medium);
+            font-style: italic;
         }
 
         .highlight-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
-            margin-top: 1.5rem;
+            margin: 2rem 0;
         }
 
         .highlight-card {
-            background: linear-gradient(135deg, #ecfdf5 0%, #f0fdfa 100%);
+            background: linear-gradient(135deg, #f0fdfa 0%, white 100%);
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-lg);
             padding: 1.5rem;
-            border-radius: var(--radius-md);
-            border: 2px solid var(--primary-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s;
         }
 
         .highlight-card:hover {
-            transform: translateY(-5px);
+            border-color: var(--primary-color);
             box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
         }
 
         .highlight-card h3 {
             color: var(--primary-dark);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 0.75rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
+        .checkmark {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
         .highlight-card p {
             color: var(--text-medium);
             line-height: 1.6;
-        }
-
-        .checkmark {
-            color: var(--accent-color);
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        .table-container {
-            overflow-x: auto;
-            margin: 1.5rem 0;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: var(--bg-white);
-            box-shadow: var(--shadow-sm);
-            border-radius: var(--radius-md);
-            overflow: hidden;
-        }
-
-        thead {
-            background: var(--primary-color);
-            color: white;
-        }
-
-        th, td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        th {
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.875rem;
-            letter-spacing: 0.05em;
-        }
-
-        tbody tr:hover {
-            background: var(--bg-light);
-        }
-
-        tbody tr:last-child td {
-            border-bottom: none;
-        }
-
-        .figure-placeholder {
-            border: 2px dashed var(--primary-color);
-            border-radius: var(--radius-md);
-            padding: 3rem;
-            text-align: center;
-            margin: 1.5rem 0;
-            background: #f0fdfa;
-            color: var(--text-medium);
-            font-style: italic;
-        }
-
-        .comparison-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .comparison-card {
-            background: var(--bg-white);
-            border: 2px solid var(--border-color);
-            border-radius: var(--radius-md);
-            padding: 1.5rem;
-            transition: border-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .comparison-card:hover {
-            border-color: var(--primary-color);
-            transform: translateY(-3px);
-        }
-
-        .comparison-card h4 {
-            color: var(--primary-dark);
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-
-        .comparison-card ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .comparison-card li {
-            padding: 0.5rem 0;
-            color: var(--text-medium);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .comparison-card li:last-child {
-            border-bottom: none;
-        }
-
-        .comparison-card strong {
-            color: var(--text-dark);
-        }
-
-        .metric-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin: 1.5rem 0;
-        }
-
-        .metric-box {
-            background: linear-gradient(135deg, #f0fdfa 0%, #ecfdf5 100%);
-            padding: 1.5rem;
-            border-radius: var(--radius-md);
-            text-align: center;
-            border: 1px solid var(--primary-color);
-        }
-
-        .metric-label {
-            font-size: 0.875rem;
-            color: var(--text-medium);
-            margin-bottom: 0.5rem;
-        }
-
-        .metric-value {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-        }
-
-        .metric-unit {
-            font-size: 0.875rem;
-            color: var(--text-light);
+            font-size: 0.95rem;
         }
 
         .benefits-list {
@@ -367,8 +227,8 @@
             padding: 0.75rem 0;
             padding-left: 2rem;
             position: relative;
+            line-height: 1.8;
             color: var(--text-medium);
-            line-height: 1.6;
         }
 
         .benefits-list li:before {
@@ -377,105 +237,107 @@
             left: 0;
             color: var(--accent-color);
             font-weight: bold;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
         }
 
-        .footer {
-            background: var(--text-dark);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-links span {
-            color: var(--primary-light);
-        }
-
-        .two-column {
+        .comparison-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
             margin: 1.5rem 0;
         }
 
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 1.75rem;
-            }
-
-            .container {
-                padding: 1rem;
-            }
-
-            .section {
-                padding: 1.5rem;
-            }
-
-            .nav-container {
-                padding: 1rem;
-            }
-
-            .nav-links {
-                gap: 0.75rem;
-            }
-
-            .hero-meta {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            .two-column {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-            }
+        .comparison-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            text-align: center;
+            transition: all 0.3s;
         }
 
-        .scroll-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
+        .comparison-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-md);
+        }
+
+        .comparison-card h4 {
+            color: var(--primary-dark);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .metric-box {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+        }
+
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .metric-unit {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            margin-top: 0.25rem;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
             background: var(--primary-color);
             color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            box-shadow: var(--shadow-md);
-            z-index: 1000;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
         }
 
-        .scroll-to-top.visible {
-            opacity: 1;
+        tr:hover {
+            background: var(--bg-light);
         }
 
-        .scroll-to-top:hover {
-            transform: translateY(-5px);
-            background: var(--primary-dark);
+        tr:last-child td {
+            border-bottom: none;
         }
 
-        /* Figure Styles */
         .figure-container {
             margin: 2.5rem auto;
             text-align: center;
@@ -503,23 +365,53 @@
             flex-direction: row !important;
             gap: 1.5rem;
             justify-content: center;
-            flex-wrap: nowrap;  /* Changed from wrap to nowrap */
+            flex-wrap: nowrap;
             margin-bottom: 1rem;
             align-items: flex-start;
         }
-        
-        .figure-item {
-            text-align: center;
-            flex: 0 1 auto;  /* Add this to prevent flex items from growing */
-            max-width: 45%;  /* Limit width to ensure two items fit side-by-side */
+
+        .figure-row-2-small {
+            display: flex !important;
+            flex-direction: row !important;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: nowrap;
+            margin-bottom: 1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .figure-grid-2x2 {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1.5rem;
-            max-width: 800px;
+            max-width: 400px;
             margin: 0 auto 1rem auto;
+        }
+
+        .figure-row-3 {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .figure-item {
+            text-align: center;
+            flex: 0 1 auto;
+            max-width: 45%;
+        }
+
+        .figure-row-2-small .figure-item {
+            max-width: 250px;
+        }
+
+        .figure-row-3 .figure-item {
+            flex: 1;
+            min-width: 200px;
+            max-width: 300px;
         }
 
         .figure-item img {
@@ -548,148 +440,60 @@
             padding: 0 1rem;
         }
 
-        /* Impact Banner */
-        .impact-banner {
-            background: linear-gradient(135deg, #c00015 0%, #ff5459 100%);
+        .footer {
+            background: var(--text-dark);
             color: white;
-            padding: 3rem 2rem;
-            margin-bottom: 3rem;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .impact-banner-title {
+            padding: 2rem 0;
+            margin-top: 4rem;
             text-align: center;
-            font-size: 1.75rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            letter-spacing: -0.02em;
         }
 
-        .impact-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .impact-stat {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 1.5rem;
-            border-radius: var(--radius-md);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            text-align: center;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s ease, background 0.3s ease;
-        }
-
-        .impact-stat:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .impact-stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .impact-stat-text {
-            font-size: 0.95rem;
-            line-height: 1.5;
-            opacity: 0.95;
-        }
-
-        /* Did You Know Box */
-        .did-you-know {
-            background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
-            border-left: 5px solid #c00015;
-            padding: 2rem;
-            border-radius: var(--radius-md);
-            display: flex;
-            gap: 1.5rem;
-            align-items: flex-start;
-            margin-bottom: 2rem;
-            box-shadow: var(--shadow-md);
-        }
-
-        @media (prefers-color-scheme: dark) {
-            .did-you-know {
-                background: linear-gradient(135deg, rgba(192, 0, 21, 0.15) 0%, rgba(255, 84, 89, 0.15) 100%);
-            }
-        }
-
-        .dyk-icon {
-            font-size: 3rem;
-            flex-shrink: 0;
-        }
-
-        .dyk-content h3 {
-            color: #c00015;
-            font-size: 1.5rem;
-            margin-bottom: 0.75rem;
-            font-weight: 600;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            .dyk-content h3 {
-                color: #ff5459;
-            }
-        }
-
-        .dyk-content p {
-            color: var(--text-dark);
-            line-height: 1.7;
-            font-size: 1rem;
-        }
-
-        /* Why Matters Card */
-        .why-matters-card {
-            background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
-            border-left: 4px solid #c00015;
-            padding: 2rem;
-            border-radius: var(--radius-md);
-            margin-bottom: 1.5rem;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            .why-matters-card {
-                background: linear-gradient(135deg, rgba(192, 0, 21, 0.15) 0%, rgba(255, 84, 89, 0.15) 100%);
-            }
-        }
-
-        /* Acknowledgments Content */
-        .acknowledgments-content {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--bg-white);
-            padding: 2rem;
-            border-radius: var(--radius-lg);
-            border: 2px solid var(--border-color);
-        }
-
-        .acknowledgments-content p {
-            line-height: 1.8;
-            color: var(--text-medium);
+        .footer-content {
+            opacity: 0.8;
+            font-size: 0.9rem;
         }
 
         @media (max-width: 768px) {
-            .impact-banner-title {
-                font-size: 1.35rem;
+            .hero-title {
+                font-size: 1.8rem;
             }
 
-            .impact-stat-number {
-                font-size: 2.25rem;
+            .section {
+                padding: 2rem 1.5rem;
             }
 
-            .did-you-know {
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .figure-row-2, .figure-row-3, .figure-row-2-small {
                 flex-direction: column;
-                gap: 1rem;
+                align-items: center;
             }
 
-            .dyk-icon {
-                font-size: 2rem;
+            .figure-item {
+                max-width: 100%;
+            }
+
+            .figure-grid-2x2 {
+                grid-template-columns: 1fr;
+            }
+
+            .highlight-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metric-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -699,84 +503,71 @@
         <div class="nav-container">
             <div class="nav-title">INDICON 2025</div>
             <div class="nav-links">
-                <a href="#abstract">Abstract</a>
-                <a href="#problem">Challenge</a>
-                <a href="#solution">Solution</a>
-                <a href="#results">Results</a>
-                <a href="#impact">Impact</a>
-                <a href="#acknowledgments">Acknowledgments</a>
+                <a href="#abstract" class="nav-link">Abstract</a>
+                <a href="#problem" class="nav-link">Problem</a>
+                <a href="#approach" class="nav-link">Approach</a>
+                <a href="#results" class="nav-link">Results</a>
+                <a href="#impact" class="nav-link">Impact</a>
             </div>
         </div>
     </nav>
 
     <div class="hero">
-        <div class="container">
-            <h1>Evaluation of Low-Cost Pressure Sensors for IoT and ML-based Water Flow Estimation</h1>
+        <div class="hero-content container">
+            <h1 class="hero-title">Evaluation of Low-Cost Pressure Sensors for IoT and ML-based Water Flow Estimation</h1>
             <div class="hero-meta">
-                <div class="hero-meta-item">M. Gandhi &bull; T. Bhatt &bull; S. Chaudhari &bull; A. Vattem</div>
-            </div>
-            <div class="hero-meta">
-                <div class="hero-meta-item">International Institute of Information Technology Hyderabad</div>
-            </div>
-            <div class="hero-meta" style="margin-top: 1rem;">
-                <div class="badge">INDICON 2025</div>
+                <div class="hero-meta-item">
+                    <span class="badge">INDICON 2025</span>
+                    <span class="badge">Submitted</span>
+                </div>
+                <div class="hero-meta-item">M. Gandhi • T. Bhatt • S. Chaudhari • A. Vattem</div>
+                <div class="hero-meta-item">International Institute of Information Technology Hyderabad, India</div>
             </div>
         </div>
     </div>
 
-
-
     <div class="container">
-        <!-- Abstract Section -->
         <section id="abstract" class="section">
             <h2 class="section-title">Abstract</h2>
-            <div class="abstract-card">
+            <div class="abstract">
                 <p class="abstract-text">
-                    This study presents an Internet of Things (IoT)-based system that utilises machine learning (ML) techniques to estimate water flow through pipes based on pressure. The system incorporates an ESP-32 microcontroller, a Danfoss MBS 3000 pressure sensor, and a flow meter deployed at three locations to collect data for three months. To model the relationship between pressure and flow rate, ML algorithms such as linear regression (LR), support vector regression (SVR), and convolutional neural network (CNN) were trained, analysed, and compared. By establishing a model to estimate the flow rate based on pressure, the need for a flow meter in the setup can be eliminated. The system's low-cost, easy-to-implement, and non-invasive nature makes it suitable for widespread adoption in residential areas, offering a promising solution for optimising water distribution and reducing water wastage.
+                    Water scarcity and inefficient resource management present critical challenges, with conventional flow measurement techniques often relying on expensive and invasive methods. This work evaluates the performance of three low-cost pressure sensors (HK3022, MBS3000, and Series 21Y) for internet of things (IoT) and machine learning (ML) based water flow estimation. Tests were conducted in a closed-loop experimental setup across pressure ranges from 1.0 to 2.0 bar, generating over 8,640 pressure readings and 2,160 flow measurements. Sensor performance was assessed through pressure measurement accuracy metrics (RMSE and CV), and flow estimation reliability was assessed using five ML algorithms. Results demonstrate that all sensors achieve comparable flow estimation accuracy. While calibration improves absolute pressure measurement accuracy, it provides minimal advantage for flow estimation tasks. This low-cost, non-invasive approach offers a promising water monitoring solution that is accessible and economically viable.
                 </p>
                 <div class="keywords">
-                    <strong>Keywords:</strong> correlation, estimation, flow rate, IoT, ML, pressure
+                    <strong>Keywords:</strong> flow estimation, IoT, ML, pressure sensors, sensor calibration
                 </div>
             </div>
         </section>
 
-        <!-- Problem Statement Section -->
         <section id="problem" class="section">
             <h2 class="section-title">The Challenge</h2>
             <div class="highlight-cards">
                 <div class="highlight-card">
-                    <h3><span class="checkmark">💧</span> Water Scarcity Crisis</h3>
-                    <p>Water scarcity is a significant global threat affecting billions of people. Effective monitoring and management systems are critical to address this growing challenge.</p>
+                    <h3><span class="checkmark">✓</span> Water Scarcity Crisis</h3>
+                    <p>Water scarcity and inefficient resource management present critical challenges globally. Conventional flow measurement techniques often rely on expensive and invasive methods.</p>
                 </div>
                 <div class="highlight-card">
-                    <h3><span class="checkmark">💰</span> Expensive Traditional Methods</h3>
-                    <p>Traditional flow meters are expensive, require invasive installation, and are often impractical for widespread deployment in residential and municipal settings.</p>
+                    <h3><span class="checkmark">✓</span> Expensive Traditional Methods</h3>
+                    <p>Traditional flow meters are expensive and invasive, making them challenging to deploy at scale, especially in resource-constrained regions.</p>
                 </div>
                 <div class="highlight-card">
-                    <h3><span class="checkmark">📊</span> Need for Real-Time Monitoring</h3>
-                    <p>There is a critical need for accurate, real-time water monitoring systems that can provide actionable insights for optimizing distribution and reducing wastage.</p>
+                    <h3><span class="checkmark">✓</span> Limited Sensor Comparisons</h3>
+                    <p>Previous work validated the approach but was limited to a single sensor type and binary pressure states, lacking evaluation across different sensors and continuous pressure ranges.</p>
                 </div>
                 <div class="highlight-card">
-                    <h3><span class="checkmark">🔧</span> IoT and ML Solutions</h3>
-                    <p>IoT and machine learning offer promising solutions for automated, non-invasive water monitoring that can be scaled across diverse infrastructure environments.</p>
+                    <h3><span class="checkmark">✓</span> Need for Systematic Evaluation</h3>
+                    <p>A comprehensive comparison of low-cost pressure sensors is needed to determine their effectiveness for ML-based water flow estimation across different price points and operating conditions.</p>
                 </div>
             </div>
         </section>
 
-
-
-        <!-- Approach Section -->
-        <section id="solution" class="section">
+        <section id="approach" class="section">
             <h2 class="section-title">Our Solution</h2>
-            
-            <h3 class="section-subtitle">Hardware Setup</h3>
-            <ul class="benefits-list" style="margin-bottom: 1.5rem;">
-                <li><strong>ESP-32 Microcontroller:</strong> Core processing unit for data collection and transmission</li>
-                <li><strong>Danfoss MBS 3000 Pressure Sensor:</strong> 0-16 bar range, 4-20 mA output, industrial-grade accuracy</li>
-                <li><strong>Shenitech Ultrasonic Flow Meter:</strong> Ground truth measurement for model validation</li>
-                <li><strong>Three Deployment Nodes:</strong> PH0100, PH0302, PH0303 at IIIT-H campus</li>
-                <li><strong>Cloud Platform:</strong> ThingSpeak for real-time data storage and visualization</li>
-            </ul>
+
+            <h3 class="section-subtitle">Experimental Setup</h3>
+            <p style="line-height: 1.8; color: var(--text-medium); margin-bottom: 1rem;">
+                A closed-loop water circulation system was deployed for controlled pressure and flow measurement testing.
+            </p>
 
             <div class="figure-container">
                 <div class="figure-row-2">
@@ -792,6 +583,15 @@
                 <p class="figure-caption"><strong>Figure 1:</strong> (a) Deployment setup (b) Block architecture of the node</p>
             </div>
 
+            <h3 class="section-subtitle">Hardware Configuration</h3>
+            <ul class="benefits-list" style="margin-bottom: 1.5rem;">
+                <li><strong>500L Water Tank</strong> with 0.37 kW (0.5 HP) pump</li>
+                <li><strong>Ball Valve</strong> for pressure regulation (1.0-2.0 bar range)</li>
+                <li><strong>Retrofitted Flow Meter</strong> (0.01 kL resolution) for ground truth</li>
+                <li><strong>ESP32 Microcontrollers</strong> for data acquisition and Wi-Fi transmission</li>
+                <li><strong>Four Monitoring Points:</strong> Reference, Unit 1, Unit 2, Unit 3</li>
+                <li><strong>0.5-inch PVC Pipes</strong> connecting all components</li>
+            </ul>
 
             <div class="figure-container">
                 <div class="figure-grid-2x2">
@@ -815,161 +615,80 @@
                 <p class="figure-caption"><strong>Figure 2:</strong> Hardware components of the experimental setup. (a) Tank, pump and valve (b) Pressure Sensors (c) Retrofitted flow meter (d) IoT node</p>
             </div>
 
+            <h4 style="color: var(--primary-dark); font-size: 1.2rem; margin-top: 2rem; margin-bottom: 1rem;">Pressure Sensors Tested</h4>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sensor</th>
+                            <th>Accuracy</th>
+                            <th>Range (bar)</th>
+                            <th>Price (INR)</th>
+                            <th>Use Case</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Sensor A</strong><br>Flying Elephant HK3022</td>
+                            <td>±1.5% FS</td>
+                            <td>0-5</td>
+                            <td>1,500</td>
+                            <td>Residential/Light Commercial</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sensor B</strong><br>Danfoss MBS3000</td>
+                            <td>±0.5% FS</td>
+                            <td>0-16</td>
+                            <td style="color: var(--accent-color); font-weight: 600;">4,000</td>
+                            <td>Industrial Grade</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sensor C</strong><br>Keller Series 21Y</td>
+                            <td>±0.5% FS</td>
+                            <td>0-10</td>
+                            <td>3,000</td>
+                            <td>Industrial Grade</td>
+                        </tr>
+                        <tr style="background: var(--bg-light);">
+                            <td><strong>Reference</strong><br>Keller 23SYe</td>
+                            <td>±0.25% FS</td>
+                            <td>0-10</td>
+                            <td style="font-weight: 600;">20,000</td>
+                            <td>Ground Truth</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-            <h3 class="section-subtitle">Data Collection</h3>
+            <h3 class="section-subtitle">Data Collection Protocol</h3>
             <div class="metric-grid">
                 <div class="metric-box">
-                    <div class="metric-label">Duration</div>
+                    <div class="metric-label">Test Phases</div>
                     <div class="metric-value">3</div>
-                    <div class="metric-unit">months</div>
+                    <div class="metric-unit">sensor types</div>
                 </div>
                 <div class="metric-box">
-                    <div class="metric-label">Data Points</div>
-                    <div class="metric-value">75,000+</div>
-                    <div class="metric-unit">per node</div>
+                    <div class="metric-label">Pressure Readings</div>
+                    <div class="metric-value">8,640+</div>
+                    <div class="metric-unit">total collected</div>
                 </div>
                 <div class="metric-box">
-                    <div class="metric-label">Sampling Interval</div>
-                    <div class="metric-value">90</div>
-                    <div class="metric-unit">seconds</div>
+                    <div class="metric-label">Flow Measurements</div>
+                    <div class="metric-value">2,160</div>
+                    <div class="metric-unit">data points</div>
                 </div>
                 <div class="metric-box">
-                    <div class="metric-label">Parameters</div>
-                    <div class="metric-value">4</div>
-                    <div class="metric-unit">measured values</div>
+                    <div class="metric-label">Pressure Range</div>
+                    <div class="metric-value">1.0-2.0</div>
+                    <div class="metric-unit">bar (6 settings)</div>
                 </div>
             </div>
             <p style="line-height: 1.8; color: var(--text-medium); margin-top: 1.5rem;">
-                <strong>Measured Parameters:</strong> Timestamp, pressure voltage, instantaneous flow rate, total water flow
+                <strong>Protocol:</strong> Data collected at 1-minute intervals for ~2 hours per pressure setting (1.0, 1.2, 1.4, 1.6, 1.8, 2.0 bar). Three phases tested all sensor types with reference sensor always at Unit 1 for calibration.
             </p>
-
-            <h3 class="section-subtitle">Machine Learning Models</h3>
-            <p style="line-height: 1.8; color: var(--text-medium); margin-bottom: 1rem;">
-                Three ML algorithms were evaluated to model the pressure-flow relationship:
-            </p>
-            <div class="comparison-grid">
-                <div class="comparison-card">
-                    <h4>Linear Regression (LR)</h4>
-                    <p style="color: var(--text-medium); font-size: 0.9rem;">Baseline model establishing linear relationship between pressure and flow rate.</p>
-                </div>
-                <div class="comparison-card">
-                    <h4>Support Vector Regression (SVR)</h4>
-                    <p style="color: var(--text-medium); font-size: 0.9rem;">Non-linear modeling capable of capturing complex pressure-flow relationships.</p>
-                </div>
-                <div class="comparison-card">
-                    <h4>Convolutional Neural Network (CNN)</h4>
-                    <p style="color: var(--text-medium); font-size: 0.9rem;">2 convolutional layers, Adam optimizer, 100 epochs. Deep learning approach for pattern recognition.</p>
-                </div>
-            </div>
-            <p style="line-height: 1.8; color: var(--text-medium); margin-top: 1rem;">
-                <strong>Validation:</strong> k-fold cross-validation for robust performance evaluation across all deployment locations.
-            </p>
-        </section>
-
-        <!-- Results Section -->
-        <section id="results" class="section">
-            <h2 class="section-title">Results &amp; Findings</h2>
-            
-            <h3 class="section-subtitle">Correlation Analysis</h3>
-            <p style="line-height: 1.8; color: var(--text-medium); margin-bottom: 1rem;">
-                High correlation observed between pressure and flow rate across all deployment locations:
-            </p>
-            
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Location</th>
-                            <th>Pressure-Flow Correlation</th>
-                            <th>Pressure-Truth Correlation</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>PH0100</td>
-                            <td style="color: var(--accent-color); font-weight: 600;">0.970</td>
-                            <td style="color: var(--accent-color); font-weight: 600;">0.993</td>
-                        </tr>
-                        <tr>
-                            <td>PH0302</td>
-                            <td style="color: var(--accent-color); font-weight: 600;">0.973</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>PH0303</td>
-                            <td style="color: var(--accent-color); font-weight: 600;">0.990</td>
-                            <td>-</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-
-
-            <h3 class="section-subtitle">Model Performance</h3>
-            <p style="line-height: 1.8; color: var(--text-medium); margin-bottom: 1rem;">
-                Three machine learning algorithms were trained and compared for flow estimation accuracy:
-            </p>
-
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Location</th>
-                            <th>Linear Regression</th>
-                            <th>SVR</th>
-                            <th>CNN</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td colspan="4" style="background: var(--color-bg-1); font-weight: 600;">Model Accuracy (R² Score)</td>
-                        </tr>
-                        <tr>
-                            <td>PH0100</td>
-                            <td>0.942</td>
-                            <td>0.969</td>
-                            <td style="color: var(--accent-color); font-weight: 600;">0.974</td>
-                        </tr>
-                        <tr>
-                            <td>PH0302</td>
-                            <td>0.946</td>
-                            <td>0.981</td>
-                            <td style="color: var(--accent-color); font-weight: 600;">0.984</td>
-                        </tr>
-                        <tr>
-                            <td>PH0303</td>
-                            <td>0.980</td>
-                            <td style="color: var(--accent-color); font-weight: 600;">0.984</td>
-                            <td style="color: var(--accent-color); font-weight: 600;">0.984</td>
-                        </tr>
-                        <tr>
-                            <td colspan="4" style="background: var(--color-bg-1); font-weight: 600;">Root Mean Square Error (RMSE)</td>
-                        </tr>
-                        <tr>
-                            <td>PH0100</td>
-                            <td>0.873</td>
-                            <td>0.635</td>
-                            <td style="color: var(--accent-color); font-weight: 600;">0.579</td>
-                        </tr>
-                        <tr>
-                            <td>PH0302</td>
-                            <td>0.450</td>
-                            <td>0.253</td>
-                            <td style="color: var(--accent-color); font-weight: 600;">0.232</td>
-                        </tr>
-                        <tr>
-                            <td>PH0303</td>
-                            <td>0.302</td>
-                            <td style="color: var(--accent-color); font-weight: 600;">0.269</td>
-                            <td>0.273</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
 
             <div class="figure-container">
-                <div class="figure-row-2">
+                <div class="figure-row-2-small">
                     <div class="figure-item">
                         <img src="images/paper2_segment_4_plot.png" alt="Data at 1 bar pressure">
                         <p class="subfigure-label">(a) 1.0 bar</p>
@@ -980,6 +699,209 @@
                     </div>
                 </div>
                 <p class="figure-caption"><strong>Figure 3:</strong> Timeseries plots of a few data segments collected for Sensor Type A at different pressure levels</p>
+            </div>
+
+            <h3 class="section-subtitle">Machine Learning Approaches</h3>
+            <p style="line-height: 1.8; color: var(--text-medium); margin-bottom: 1rem;">
+                Five ML algorithms were evaluated for both sensor calibration and flow rate estimation:
+            </p>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4>Linear Regression (LR)</h4>
+                    <p style="color: var(--text-medium); font-size: 0.9rem;">Baseline model for linear relationships</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>Support Vector Regression (SVR)</h4>
+                    <p style="color: var(--text-medium); font-size: 0.9rem;">Captures non-linear patterns</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>Random Forest (RF)</h4>
+                    <p style="color: var(--text-medium); font-size: 0.9rem;">Ensemble decision tree method</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>Gradient Boosting (GB)</h4>
+                    <p style="color: var(--text-medium); font-size: 0.9rem;">Advanced ensemble technique</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>XGBoost (XGB)</h4>
+                    <p style="color: var(--text-medium); font-size: 0.9rem;">Optimized gradient boosting</p>
+                </div>
+            </div>
+            <p style="line-height: 1.8; color: var(--text-medium); margin-top: 1rem;">
+                <strong>Training:</strong> 80/20 train-test split with k-fold cross-validation. Models evaluated using RMSE and R² metrics. Two-stage analysis: (1) ML-based sensor calibration for Unit 1 sensors, (2) ML-based flow estimation for all sensors (calibrated and uncalibrated).
+            </p>
+        </section>
+
+        <section id="results" class="section">
+            <h2 class="section-title">Results & Findings</h2>
+
+            <h3 class="section-subtitle">Sensor Calibration Results</h3>
+            <p style="line-height: 1.8; color: var(--text-medium); margin-bottom: 1rem;">
+                Calibration dramatically improved absolute pressure measurement accuracy for all sensors:
+            </p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sensor Type</th>
+                            <th>Before Calibration<br>RMSE (bar)</th>
+                            <th>After Calibration<br>RMSE (bar)</th>
+                            <th>Improvement</th>
+                            <th>Best Model</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Sensor A</strong></td>
+                            <td>0.085</td>
+                            <td style="color: var(--accent-color); font-weight: 600;">0.013</td>
+                            <td style="color: var(--accent-color); font-weight: 600;">84% reduction</td>
+                            <td>Gradient Boosting</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sensor B</strong></td>
+                            <td>0.144</td>
+                            <td style="color: var(--accent-color); font-weight: 600;">0.007</td>
+                            <td style="color: var(--accent-color); font-weight: 600;">95% reduction</td>
+                            <td>Gradient Boosting</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sensor C</strong></td>
+                            <td>0.066</td>
+                            <td style="color: var(--accent-color); font-weight: 600;">0.008</td>
+                            <td style="color: var(--accent-color); font-weight: 600;">87% reduction</td>
+                            <td>Gradient Boosting</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="section-subtitle">Correlation Analysis</h3>
+            <p style="line-height: 1.8; color: var(--text-medium); margin-bottom: 1rem;">
+                Strong negative correlation between pressure and flow rate observed across all sensors (Pearson coefficients: -0.993 to -0.998):
+            </p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sensor Type</th>
+                            <th>Unit 1 (Uncal.)</th>
+                            <th>Unit 1 (Cal.)</th>
+                            <th>Unit 2</th>
+                            <th>Unit 3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Sensor A</strong></td>
+                            <td>-0.995</td>
+                            <td>-0.996</td>
+                            <td>-0.995</td>
+                            <td>-0.994</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sensor B</strong></td>
+                            <td>-0.997</td>
+                            <td>-0.998</td>
+                            <td>-0.997</td>
+                            <td>-0.993</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sensor C</strong></td>
+                            <td>-0.998</td>
+                            <td>-0.998</td>
+                            <td>-0.996</td>
+                            <td>-0.995</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="section-subtitle">Flow Estimation Performance (Best Models)</h3>
+            <p style="line-height: 1.8; color: var(--text-medium); margin-bottom: 1rem;">
+                Gradient Boosting achieved the best performance across all sensors and positions:
+            </p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sensor & Position</th>
+                            <th>RMSE (kL/h)</th>
+                            <th>R²</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="3" style="background: var(--bg-light); font-weight: 600;">Sensor A</td>
+                        </tr>
+                        <tr>
+                            <td>Unit 1 (Uncalibrated)</td>
+                            <td>0.0109</td>
+                            <td style="color: var(--accent-color); font-weight: 600;">0.9982</td>
+                        </tr>
+                        <tr>
+                            <td>Unit 1 (Calibrated)</td>
+                            <td>0.0106</td>
+                            <td style="color: var(--accent-color); font-weight: 600;">0.9983</td>
+                        </tr>
+                        <tr>
+                            <td>Unit 2</td>
+                            <td>0.0109</td>
+                            <td style="color: var(--accent-color); font-weight: 600;">0.9982</td>
+                        </tr>
+                        <tr>
+                            <td>Unit 3</td>
+                            <td>0.0100</td>
+                            <td style="color: var(--accent-color); font-weight: 600;">0.9985</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="background: var(--bg-light); font-weight: 600;">Sensor B</td>
+                        </tr>
+                        <tr>
+                            <td>Unit 1 (Uncalibrated)</td>
+                            <td>0.0102</td>
+                            <td style="color: var(--accent-color); font-weight: 600;">0.9985</td>
+                        </tr>
+                        <tr>
+                            <td>Unit 1 (Calibrated)</td>
+                            <td>0.0098</td>
+                            <td style="color: var(--accent-color); font-weight: 600;">0.9986</td>
+                        </tr>
+                        <tr>
+                            <td>Unit 2</td>
+                            <td>0.0096</td>
+                            <td style="color: var(--accent-color); font-weight: 600;">0.9987</td>
+                        </tr>
+                        <tr>
+                            <td>Unit 3</td>
+                            <td>0.0102</td>
+                            <td style="color: var(--accent-color); font-weight: 600;">0.9985</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="background: var(--bg-light); font-weight: 600;">Sensor C</td>
+                        </tr>
+                        <tr>
+                            <td>Unit 1 (Uncalibrated)</td>
+                            <td>0.0126</td>
+                            <td style="color: var(--accent-color); font-weight: 600;">0.9979</td>
+                        </tr>
+                        <tr>
+                            <td>Unit 1 (Calibrated)</td>
+                            <td>0.0121</td>
+                            <td style="color: var(--accent-color); font-weight: 600;">0.9980</td>
+                        </tr>
+                        <tr>
+                            <td>Unit 2</td>
+                            <td>0.0117</td>
+                            <td style="color: var(--accent-color); font-weight: 600;">0.9982</td>
+                        </tr>
+                        <tr>
+                            <td>Unit 3</td>
+                            <td>0.0123</td>
+                            <td style="color: var(--accent-color); font-weight: 600;">0.9980</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
             <div class="figure-container">
@@ -996,143 +918,81 @@
                 <p class="figure-caption"><strong>Figure 4:</strong> Model performance visualization. (a) Plot showing fitted curves of calibration models trained for Unit 1 of Sensor A (b) Plot showing fitted curves of all flow rate estimation models trained for Unit 3 of Sensor A</p>
             </div>
 
-        </section>
-
             <h3 class="section-subtitle" style="margin-top: 2.5rem;">Key Findings</h3>
             <div class="highlight-cards">
                 <div class="highlight-card">
-                    <h3><span class="checkmark">✓</span> All Models Achieved &gt;90% Accuracy</h3>
-                    <p>All three ML models (LR, SVR, CNN) demonstrated R² values above 0.94 across all locations, validating the pressure-based approach.</p>
+                    <h3><span class="checkmark">✓</span> All Low-Cost Sensors Perform Comparably</h3>
+                    <p>Despite 2.7x price difference, all sensors achieved similar flow estimation accuracy (R² > 0.997), making budget sensors viable alternatives.</p>
                 </div>
                 <div class="highlight-card">
-                    <h3><span class="checkmark">✓</span> CNN Models Provided Best Results</h3>
-                    <p>Convolutional Neural Networks achieved the highest accuracy with lowest RMSE values across most deployment nodes.</p>
+                    <h3><span class="checkmark">✓</span> Calibration: Dual Benefits</h3>
+                    <p>Calibration dramatically improves pressure measurement (85-95% error reduction) but provides minimal advantage for flow estimation tasks.</p>
                 </div>
                 <div class="highlight-card">
-                    <h3><span class="checkmark">✓</span> Strong Correlation Validates Approach</h3>
-                    <p>High correlation coefficients (0.97-0.99) between pressure and flow demonstrate the feasibility of eliminating expensive flow meters.</p>
+                    <h3><span class="checkmark">✓</span> Position Independence</h3>
+                    <p>Sensor placement has minimal impact on estimation accuracy, allowing flexible deployment throughout water distribution systems.</p>
                 </div>
                 <div class="highlight-card">
-                    <h3><span class="checkmark">✓</span> No Calibration Needed</h3>
-                    <p>Models performed consistently across different locations without site-specific calibration, enabling easy deployment.</p>
+                    <h3><span class="checkmark">✓</span> Simple Models Sufficient</h3>
+                    <p>Linear Regression achieved R² > 0.99, making it ideal for resource-constrained edge deployments despite ensemble methods performing slightly better.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3><span class="checkmark">✓</span> Strong Inverse Correlation</h3>
+                    <p>All sensors showed -0.99+ correlation between pressure and flow rate, validating the fundamental approach across different hardware.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Impact & Applications Section -->
         <section id="impact" class="section">
-            <h2 class="section-title">Impact &amp; Applications</h2>
+            <h2 class="section-title">Impact & Applications</h2>
             <ul class="benefits-list">
-                <li><strong>Low-Cost Alternative:</strong> Pressure sensors are significantly less expensive than traditional flow meters</li>
-                <li><strong>Non-Invasive Measurement:</strong> Easy installation without disrupting existing infrastructure</li>
-                <li><strong>Easy Implementation:</strong> Suitable for widespread adoption in residential areas</li>
-                <li><strong>Reduces Water Wastage:</strong> Real-time monitoring enables detection of leaks and optimization of distribution</li>
-                <li><strong>Scalable Solution:</strong> Can be deployed across diverse infrastructure environments from homes to smart cities</li>
+                <li><strong>Low-Cost Sensors Enable Widespread Deployment:</strong> Budget-friendly sensors (INR 1,500) perform comparably to expensive alternatives, enabling economically feasible large-scale monitoring.</li>
+                <li><strong>Non-Invasive Installation:</strong> Pressure sensors can be installed without disrupting existing infrastructure or requiring pipeline modifications.</li>
+                <li><strong>No Calibration Needed for Flow Estimation:</strong> Uncalibrated sensors with ML algorithms achieve excellent accuracy, simplifying deployment and maintenance.</li>
+                <li><strong>Dual-Purpose Monitoring:</strong> With calibration, systems provide both accurate pressure readings (for leak detection, compliance) and flow estimates from single sensor deployment.</li>
+                <li><strong>Flexible Positioning:</strong> Sensors can be deployed at various points in water distribution networks without compromising accuracy.</li>
+                <li><strong>Computationally Efficient:</strong> Simple Linear Regression models work well, enabling edge deployment on resource-constrained IoT devices.</li>
+                <li><strong>Scalable Solution:</strong> From residential to smart city applications, the approach scales economically across diverse infrastructure environments.</li>
             </ul>
+
+            <h3 class="section-subtitle" style="margin-top: 2rem;">Practical Use Cases</h3>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h4>Residential Monitoring</h4>
+                    <p style="color: var(--text-medium);">Affordable sensors for individual homes and apartment complexes</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>Agricultural Irrigation</h4>
+                    <p style="color: var(--text-medium);">Optimize water usage in farming with distributed low-cost sensors</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>Industrial Process Control</h4>
+                    <p style="color: var(--text-medium);">Monitor water flow in manufacturing without expensive flow meters</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>Leak Detection Systems</h4>
+                    <p style="color: var(--text-medium);">Real-time pressure and flow monitoring for early leak identification</p>
+                </div>
+                <div class="comparison-card">
+                    <h4>Smart City Infrastructure</h4>
+                    <p style="color: var(--text-medium);">Comprehensive water distribution monitoring at municipal scale</p>
+                </div>
+            </div>
         </section>
 
-        <!-- Acknowledgments Section -->
-        <section id="acknowledgments" class="section">
+        <section class="section">
             <h2 class="section-title">Acknowledgments</h2>
-            <div class="acknowledgments-content">
-                <p>
-                    The authors would like to acknowledge the support of the following organizations and initiatives:
-                </p>
-                <ul class="benefits-list" style="margin-top: 1.5rem;">
-                    <li>Ministry of Electronics and Information Technology (MEITY), Government of India under Smart City Living Lab Project</li>
-                </ul>
-            </div>
+            <p style="line-height: 1.8; color: var(--text-medium);">
+                This work was supported by the Ministry of Electronics and Information Technology (MEITY), Government of India under the Smart City Living Lab project.
+            </p>
         </section>
     </div>
 
     <footer class="footer">
         <div class="footer-content">
-            <p style="font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem;">INDICON 2025</p>
-            <p>IEEE 22th India Council International Conference</p>
-            <div class="footer-links">
-                <span>Published 2025</span>
-                <span>•</span>
-                <span>IIIT Hyderabad</span>
-                <span>•</span>
-                <span>India</span>
-            </div>
+            <p>&copy; 2025 INDICON | International Institute of Information Technology Hyderabad</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem;">Evaluation of Low-Cost Pressure Sensors for IoT and ML-based Water Flow Estimation</p>
         </div>
     </footer>
-
-    <div class="scroll-to-top" id="scrollTop">
-        ↑
-    </div>
-
-    <script>
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.section').forEach(section => {
-            observer.observe(section);
-        });
-
-        // Smooth scroll for navigation links
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                if (targetSection) {
-                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Scroll to top button
-        const scrollTopBtn = document.getElementById('scrollTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollTopBtn.classList.add('visible');
-            } else {
-                scrollTopBtn.classList.remove('visible');
-            }
-        });
-
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Highlight active nav link
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('.section');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.pageYOffset >= sectionTop - 200) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.style.color = '';
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.style.color = 'var(--primary-color)';
-                    link.style.fontWeight = '600';
-                } else {
-                    link.style.fontWeight = '400';
-                }
-            });
-        });
-    </script>
 </body>
 </html>
